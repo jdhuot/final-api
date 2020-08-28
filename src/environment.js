@@ -1,5 +1,6 @@
 const path = require("path");
 
+// const ENV = "development";
 const ENV = process.env.NODE_ENV || "development";
 const PATH = path.resolve(__dirname, "../.env." + ENV);
 
