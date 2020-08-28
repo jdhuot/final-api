@@ -10,6 +10,9 @@ const app = express();
 
 const db = require("./db");
 
+const activity_participants = require("./routes/activity_participants");
+const activities = require("./routes/activities");
+const users = require("./routes/users");
 const days = require("./routes/days");
 const appointments = require("./routes/appointments");
 const interviewers = require("./routes/interviewers");
@@ -37,6 +40,9 @@ module.exports = function application(
   app.use(helmet());
   app.use(bodyparser.json());
 
+  app.use("/api", activity_participants(db));
+  app.use("/api", activities(db));
+  app.use("/api", users(db));
   app.use("/api", days(db));
   app.use("/api", appointments(db, actions.updateAppointment));
   app.use("/api", interviewers(db));
