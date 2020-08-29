@@ -19,9 +19,10 @@ Copy the `.env.example` file to `.env.development` and fill in the necessary Pos
 ```
 PGHOST=localhost
 PGUSER=development
-PGDATABASE=scheduler_development
+PGDATABASE=final
 PGPASSWORD=development
 PGPORT=5432
+PORT=8080
 ```
 
 ## Seeding
